@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のにゃんこ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>今日のにゃんこ</h1>
+        <button id="playButton">きょうのにゃんこを見る</button>
+
+        <div id="rouletteContainer" class="roulette-container">
+            </div>
+
+        <div id="selectedCatContainer" style="display:none;">
+            <img id="randomImage" src="" alt="今日の写真" class="selected-image">
+            <audio id="randomAudio" src="" preload="auto"></audio>
+        </div>
+        
+        <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+
+        <button id="stopButton">音楽をストップする</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

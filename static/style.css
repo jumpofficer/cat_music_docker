@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#mediaContainer {
+    margin-top: 20px;
+}
+
+#randomImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* ルーレットコンテナのスタイル */
+.roulette-container {
+    position: relative; /* 子要素の絶対配置の基準 */
+    width: 300px; /* コンテナの幅 */
+    height: 300px; /* コンテナの高さ */
+    border: 5px solid #ccc; /* 枠線 */
+    border-radius: 50%; /* 円形にする */
+    margin: 30px auto; /* 中央寄せと上下余白 */
+    overflow: hidden; /* はみ出た画像を隠す */
+    display: flex; /* 内部で画像を中央揃えしやすくする */
+    justify-content: center;
+    align-items: center;
+}
+
+/* ルーレット内の各画像のスタイル */
+.roulette-image {
+    position: absolute;
+    width: 100px; /* 各画像の幅 */
+    height: 100px; /* 各画像の高さ */
+    border-radius: 10px; /* 角を丸くする */
+    object-fit: cover; /* 画像の比率を維持してコンテナに収める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影 */
+    transition: transform 0.5s ease-out; /* 位置変更時の滑らかなアニメーション */
+}
+
+/* ルーレット回転アニメーションのキーフレーム */
+@keyframes spin-roulette {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(3600deg); } /* 10周回転 */
+}
+
+/* 回転中のコンテナに適用するクラス */
+.spinning {
+    animation: spin-roulette 3s cubic-bezier(0.2, 0.8, 0.8, 0.2) forwards; /* 3秒で回転、最後ゆっくり停止 */
+    /* cubic-bezierで開始と停止を滑らかに */
+}
+
+/* 選ばれた猫の画像のスタイル */
+.selected-image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ff6347; /* 選択された画像を目立たせる */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ローディングスピナーのスタイル（以前のまま残します） */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

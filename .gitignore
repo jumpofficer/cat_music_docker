@@ -1,0 +1,33 @@
+# --- Music Files (著作権保護のため除外) ---
+static/audio/*.mp3
+static/audio/*.mp4
+static/audio/*.wav
+static/audio/*.m4a
+static/audio/*.ogg
+
+# --- Image Files (著作権保護のため除外) ---
+static/images/*.jpg
+static/images/*.png
+static/images/*.jpeg
+static/images/*.gif
+
+# --- Python ---
+# 実行時に自動生成される不要なファイル
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# --- Docker ---
+.docker/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+
+# --- Log files ---
+*.log
